@@ -252,8 +252,6 @@ Retail-Merchandising-Inventory-Intelligence-Dashboard
 │   └── 5. Recommendatios.png
 │
 ├── README.md
-│
-└── LICENSE
 ```
 
 ---
