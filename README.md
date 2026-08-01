@@ -41,7 +41,7 @@ The Executive Summary provides a high-level overview of business performance and
 
 ### Key Insights
 
-- Overall Revenue, Gross Profit and Units Sold
+- Overall Revenue, Gross Profit, and Units Sold
 - Current Inventory Value
 - Dead Stock Value
 - Products at Stockout Risk
@@ -89,7 +89,7 @@ Products are dynamically classified as:
 - At Risk
 - Dead Stock
 
-using business rules implemented in Power BI.
+Using business rules implemented in Power BI.
 
 ### Key Insights
 
@@ -140,7 +140,7 @@ Rather than only presenting metrics, this dashboard recommends practical actions
 
 ### Recommended Actions
 
-- Reorder products below reorder point
+- Reorder products below the reorder point
 - Apply markdowns to dead stock products
 - Monitor products at risk before they become dead stock
 - Continue balancing inventory between stores
