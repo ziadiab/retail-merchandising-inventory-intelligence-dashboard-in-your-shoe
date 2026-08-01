@@ -224,7 +224,7 @@ Instead of only presenting KPIs, the dashboard highlights operational priorities
 
 ### Dashboard Preview
 
-![Executive Recommendations](Images/5.%20Executive%20Recommendations.png)
+![Executive Recommendations](Images/5.%20Recommendatios.png)
 
 ---
 
