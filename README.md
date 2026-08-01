@@ -4,9 +4,20 @@
 
 This project is an end-to-end **Retail Merchandising & Inventory Intelligence Dashboard** developed for **In Your Shoe**, a fashion retail brand.
 
-Using **Microsoft Excel** for data preparation and **Power BI** for data modeling and visualization, the dashboard transforms raw retail data into actionable business insights that support merchandising, inventory planning, replenishment, markdown decisions, and inventory transfers.
+Using **Microsoft Excel** for data preparation and **Power BI** for data modeling, DAX calculations, and interactive reporting, the dashboard transforms raw retail data into actionable insights that support merchandising, inventory planning, replenishment, markdown decisions, and inventory transfers.
 
-The project follows a business intelligence workflow, from data cleaning and modeling to KPI development and executive reporting.
+Rather than simply reporting historical metrics, the dashboard converts retail data into business recommendations that help merchandising teams make faster and more informed decisions.
+
+---
+
+# Project Highlights
+
+- Built an end-to-end Business Intelligence solution using Excel and Power BI.
+- Designed a Star Schema data model with multiple fact and dimension tables.
+- Created 25+ business KPIs using DAX.
+- Implemented realistic retail business rules for inventory health classification.
+- Developed interactive dashboards focused on executive decision-making.
+- Delivered actionable recommendations instead of descriptive reporting.
 
 ---
 
@@ -18,7 +29,13 @@ Some products become overstocked and tie up working capital, while others run ou
 
 Without a centralized reporting solution, these decisions become reactive instead of data-driven.
 
-This dashboard provides a single source of truth for monitoring inventory performance and supporting strategic merchandising decisions.
+This dashboard helps merchandising teams:
+
+- Reduce excess inventory
+- Prevent stockouts
+- Improve inventory allocation
+- Optimize working capital
+- Support data-driven purchasing decisions
 
 ---
 
@@ -33,24 +50,76 @@ This dashboard was designed to answer four key business questions:
 
 ---
 
+# Dataset
+
+The project uses a simulated retail dataset representing one year of operations for a fashion retailer.
+
+The dataset includes:
+
+- 327 Products
+- 10 Stores
+- Sales Transactions
+- Inventory Snapshot
+- Purchase Orders
+- Inventory Transfers
+- Calendar Table
+
+---
+
+# Data Preparation
+
+Before building the dashboard, the dataset was cleaned, validated, and enhanced using business rules to simulate a realistic retail inventory environment.
+
+## Data Cleaning & Validation
+
+- Removed inconsistent inventory records
+- Standardized product and store attributes
+- Validated relationships across all tables
+- Audited sales and inventory calculations
+- Verified revenue calculations
+- Verified inventory value calculations
+- Checked data consistency across all business tables
+
+## Business Logic Implemented
+
+The project includes realistic retail business logic implemented using Excel and DAX.
+
+Examples include:
+
+- Product Status Classification
+- Product Lifecycle Stage
+- Current Inventory Calculation
+- Initial Buy Quantity
+- Launch Date Derivation
+- Sell Through Percentage
+- Inventory Value
+- Days of Cover
+- Reorder Point Logic
+- Inventory Health Classification
+- Stock Status Logic
+
+---
+
 # Dashboard Pages
 
 ## 1. Executive Summary
 
-The Executive Summary provides a high-level overview of business performance and inventory health, enabling executives to quickly understand the current state of the business.
+The Executive Summary provides a high-level overview of business performance and inventory health, allowing decision-makers to quickly understand the current state of the business.
 
 ### Key Insights
 
-- Overall Revenue, Gross Profit, and Units Sold
-- Current Inventory Value
+- Total Revenue
+- Gross Profit
+- Total Units Sold
+- Inventory Value
 - Dead Stock Value
 - Products at Stockout Risk
 - Inventory Distribution by Stock Status
-- Revenue Contribution by Category
+- Revenue by Category
 - Inventory Investment by Category
 - Monthly Revenue Trend
 - Top Best-Selling Products
-- Lowest-Selling Products
+- Top Lowest-Selling Products
 
 ### Dashboard Preview
 
@@ -60,7 +129,7 @@ The Executive Summary provides a high-level overview of business performance and
 
 ## 2. Replenishment Analysis
 
-This page helps merchandising and inventory planners identify products requiring replenishment before stockouts occur.
+This page identifies products requiring replenishment before stockouts occur.
 
 ### Key Insights
 
@@ -68,10 +137,10 @@ This page helps merchandising and inventory planners identify products requiring
 - Total Reorder Quantity
 - Products at Stockout Risk
 - Inventory Value Below Reorder Point
-- Reorder Quantity by Product Category
+- Reorder Quantity by Category
 - Products Requiring Replenishment
-- Stock Status Distribution
 - Reorder Quantity by Store
+- Current Stock Status
 
 ### Dashboard Preview
 
@@ -81,15 +150,22 @@ This page helps merchandising and inventory planners identify products requiring
 
 ## 3. Markdown & Dead Stock
 
-This page identifies products that require markdowns or close monitoring based on inventory health.
+This page identifies inventory requiring commercial action through markdowns or close monitoring.
 
-Products are dynamically classified as:
+Inventory Health is dynamically classified using business rules based on:
+
+- Recent Sales Performance
+- Current Inventory
+- Sell-Through Percentage
+- Product Status
+
+Products are classified as:
 
 - Healthy
 - At Risk
 - Dead Stock
 
-Using business rules implemented in Power BI.
+Dead Stock is identified using business rules rather than simply labeling declining products.
 
 ### Key Insights
 
@@ -112,7 +188,7 @@ Using business rules implemented in Power BI.
 
 ## 4. Inventory Transfers
 
-This page analyzes inventory movements between stores to improve stock allocation and reduce excess inventory.
+This page monitors inventory movement between stores to improve stock allocation and reduce inventory imbalance.
 
 ### Key Insights
 
@@ -134,36 +210,36 @@ This page analyzes inventory movements between stores to improve stock allocatio
 
 ## 5. Executive Recommendations
 
-The final page converts analytical findings into business actions that decision-makers can implement immediately.
+The final page converts analytical findings into actionable business recommendations.
 
-Rather than only presenting metrics, this dashboard recommends practical actions based on inventory conditions.
+Instead of only presenting KPIs, the dashboard highlights operational priorities for merchandising teams.
 
-### Recommended Actions
+### Recommendations Include
 
-- Reorder products below the reorder point
-- Apply markdowns to dead stock products
-- Monitor products at risk before they become dead stock
-- Continue balancing inventory between stores
-- Prioritize inventory allocation based on demand
+- Products requiring immediate replenishment
+- Products requiring markdowns
+- Inventory requiring close monitoring
+- Store transfer priorities
+- Inventory balancing recommendations
 
 ### Dashboard Preview
 
-![Executive Recommendations](Images/5.%20Recommendatios.png)
+![Executive Recommendations](Images/5.%20Executive%20Recommendations.png)
 
 ---
 
 # Data Model
 
-The dashboard follows a star schema data model.
+The dashboard follows a **Star Schema** data model.
 
-### Fact Tables
+## Fact Tables
 
 - Sales Transactions
 - Inventory Snapshot
-- Inventory Transfers
 - Purchase Orders
+- Inventory Transfers
 
-### Dimension Tables
+## Dimension Tables
 
 - Products
 - Stores
@@ -173,25 +249,27 @@ The dashboard follows a star schema data model.
 
 # KPIs
 
-The dashboard includes more than 25 business KPIs, including:
+The dashboard includes more than **25 business KPIs**, including:
 
 - Total Revenue
 - Gross Profit
-- Units Sold
+- Total Units Sold
 - Inventory Value
 - Dead Stock Value
+- Dead Stock Products
+- At-Risk Products
+- At-Risk Inventory Value
 - Products Below Reorder Point
+- Inventory Value Below Reorder Point
 - Reorder Quantity
 - Products at Stockout Risk
-- Inventory Value Below Reorder Point
-- Dead Stock Products
-- At Risk Products
-- Slow Moving Products
 - Total Transfers
 - Units Transferred
 - Sending Stores
 - Receiving Stores
 - Average Units per Transfer
+- Sell Through Percentage
+- Days of Cover
 
 ---
 
@@ -206,30 +284,39 @@ The dashboard includes more than 25 business KPIs, including:
 
 # Skills Demonstrated
 
-### Data Preparation
+## Data Preparation
 
-- Data Cleaning
+- Excel Data Cleaning
+- Power Query Data Transformation
 - Data Validation
-- Business Logic Implementation
-- Excel Data Modeling
+- Data Quality Auditing
+- Business Rule Implementation
 
-### Power BI
+## Power BI
 
-- Star Schema Design
+- Star Schema Modeling
+- Fact & Dimension Table Design
 - Data Modeling
 - Relationship Management
-- DAX Measures
-- Calculated Columns
-- Interactive Dashboard Development
+- Interactive Dashboard Design
+- KPI Development
 
-### Business Analytics
+## DAX
+
+- Inventory Measures
+- Conditional Business Logic
+- Calculated Columns
+- Measures
+- KPI Calculations
+
+## Business Analytics
 
 - Retail Analytics
 - Inventory Analytics
 - Merchandising Analytics
-- KPI Development
 - Executive Reporting
 - Decision Support
+- Inventory Optimization
 
 ---
 
@@ -242,30 +329,30 @@ Retail-Merchandising-Inventory-Intelligence-Dashboard
 │   └── In Your Shoe Retail Merchandising & Inventory Intelligence Dashboard.pbix
 │
 ├── Data
-│   └── Retail Dataset.xlsx
+│   └── In_Your_Shoe_Dataset.xlsx
 │
 ├── Images
 │   ├── 1. Executive Summary.png
 │   ├── 2. Replenishment Analysis.png
 │   ├── 3. Markdown & Dead Stock.png
 │   ├── 4. Inventory Transfers.png
-│   └── 5. Recommendatios.png
+│   └── 5. Executive Recommendations.png
 │
-├── README.md
+└── README.md
 ```
 
 ---
 
 # Future Improvements
 
-Potential enhancements for future versions include:
+Potential enhancements include:
 
-- Forecasting inventory demand
-- Automated replenishment recommendations
-- Supplier performance analysis
-- Inventory turnover analysis by season
+- Demand Forecasting using Time Series Models
+- Automated Replenishment Recommendations
+- Supplier Performance Dashboard
+- Inventory Turnover Analysis
 - ABC Inventory Classification
-- Sell-through forecasting using machine learning
+- Sell-through Forecasting using Machine Learning
 
 ---
 
@@ -277,4 +364,4 @@ Marketing & E-commerce Data Analyst
 
 ---
 
-## If you found this project interesting, feel free to ⭐ star the repository.
+⭐ If you found this project interesting, consider starring the repository.
