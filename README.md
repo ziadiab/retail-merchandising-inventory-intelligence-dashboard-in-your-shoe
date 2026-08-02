@@ -6,7 +6,7 @@ This project uses a **simulated dataset** inspired by the business operations of
 
 The data was created specifically for portfolio and educational purposes using realistic retail business rules, seasonality patterns, inventory workflows, and merchandising logic. It **does not contain or represent any confidential or proprietary company data**.
 
-The goal of the project is to demonstrate analytical thinking, business understanding, and Power BI development skills in a realistic retail scenario.
+The goal of the project is to demonstrate analytical thinking, business understanding, Excel and Power BI development skills in a realistic retail scenario.
 
 ---
 
