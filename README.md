@@ -67,7 +67,7 @@ The project follows a complete business intelligence workflow commonly used in r
 ---
 
 ## Dataset
-The project uses a simulated retail dataset representing one year of merchandising, inventory, and sales operations for a fashion retailer.
+The project uses a simulated retail dataset representing one year (2025) of merchandising, inventory, and sales operations for a fashion retailer.
 
 The dataset includes:
 - 327 Products
